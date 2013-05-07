@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.geoloqi.coffee_android"
+          package="com.geoloqi.coffee"
           android:versionCode="1"
           android:versionName="1.0">
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="16" />
@@ -13,10 +13,10 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <permission
-            android:name="com.geoloqi.coffee-android.permission.C2D_MESSAGE"
+            android:name="com.geoloqi.coffee.permission.C2D_MESSAGE"
             android:protectionLevel="signature" />
     <!-- These permissions are required to enable the C2DM features of the SDK. -->
-    <uses-permission android:name="com.geoloqi.coffee-android.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.geoloqi.coffee.permission.C2D_MESSAGE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <application android:label="@string/app_name">
@@ -44,7 +44,7 @@
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-                <category android:name="com.geoloqi.coffee-android" />
+                <category android:name="com.geoloqi.coffee_android" />
             </intent-filter>
         </receiver>
     </application>

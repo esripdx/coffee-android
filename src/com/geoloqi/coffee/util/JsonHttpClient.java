@@ -1,4 +1,4 @@
-package com.geoloqi.coffee_android.util;
+package com.geoloqi.coffee.util;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

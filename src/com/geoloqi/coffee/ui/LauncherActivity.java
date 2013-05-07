@@ -1,10 +1,10 @@
-package com.geoloqi.coffee_android.ui;
+package com.geoloqi.coffee.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import com.geoloqi.coffee_android.R;
+import com.geoloqi.coffee.R;
 
 public class LauncherActivity extends Activity {
   private static final String TAG = "coffee.LauncherActivity";
