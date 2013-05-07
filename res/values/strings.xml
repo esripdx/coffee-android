@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">coffee-android</string>
+    <!-- App Name -->
+    <string name="app_name">Geo-Coffee</string>
+
+    <!-- Loading Strings -->
+    <string name="loading">Loading</string>
+    <string name="loading_failure">Load Failed! Please try again.</string>
+    <string name="no_connection">No Connection</string>
 </resources>
