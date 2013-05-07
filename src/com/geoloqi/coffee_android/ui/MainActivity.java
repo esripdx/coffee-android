@@ -12,8 +12,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
+import com.esri.android.geotrigger.GeotriggerService;
 import com.geoloqi.coffee_android.R;
-import com.geoloqi.coffee_android.util.HttpClient;
+import com.geoloqi.coffee_android.util.JsonHttpClient;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,11 +27,15 @@ public class MainActivity extends Activity {
   private WebView mWebView;
   private TextView mNoConnectionTextView;
   private View mLoadingView;
+  private static final String AGO_APP_ID = "efcf47cc04e04de2bbd474a929c530d7";
+  private static final String GCM_SENDER_ID = "685874447210";
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
+
+    GeotriggerService.init(this, AGO_APP_ID, GCM_SENDER_ID, GeotriggerService.TRACKING_PROFILE_ADAPTIVE);
   }
 
   @Override
@@ -114,18 +119,8 @@ public class MainActivity extends Activity {
     }
   }
 
-  @Override
-  public void onResume() {
-
-  }
-
-  @Override
-  public void onPause() {
-
-  }
-
   private void loadWebView() {
-    if (!HttpClient.isConnected(this)) {
+    if (!JsonHttpClient.isConnected(this)) {
       toggleLoadingView(false);
       toggleWebView(false);
       toggleNoConnectionTextView(true);
