@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
   private WebView mWebView;
   private TextView mNoConnectionTextView;
   private View mLoadingView;
-  private static final String AGO_APP_ID = "efcf47cc04e04de2bbd474a929c530d7";
+  private static final String AGO_APP_ID = "EleEw36l4hNM2t1i";
   private static final String GCM_SENDER_ID = "685874447210";
 
   @Override
@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
 
-    GeotriggerService.init(this, AGO_APP_ID, GCM_SENDER_ID, GeotriggerService.TRACKING_PROFILE_ADAPTIVE);
+    GeotriggerService.init(this, AGO_APP_ID, GCM_SENDER_ID, new String[] {"buttz"}, GeotriggerService.TRACKING_PROFILE_ADAPTIVE);
   }
 
   @Override
