@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -19,7 +20,7 @@ import java.util.Map;
 
 public class MainActivity extends Activity {
   private static final String TAG = "coffee.MainActivity";
-  private static final String COFFEE_URL = "http://www.google.com"; //http://coffee.geoloqi.com/m;
+  private static final String COFFEE_URL = "http://coffee.geoloqi.com/m";
   private View mParent;
   private WebView mWebView;
   private TextView mNoConnectionTextView;
@@ -29,10 +30,11 @@ public class MainActivity extends Activity {
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.main);
+      requestWindowFeature(Window.FEATURE_NO_TITLE);
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.main);
 
-    GeotriggerService.init(this, AGO_APP_ID, GCM_SENDER_ID, new String[] {"buttz"}, GeotriggerService.TRACKING_PROFILE_ADAPTIVE);
+      GeotriggerService.init(this, AGO_APP_ID, GCM_SENDER_ID, new String[] {"buttz"}, GeotriggerService.TRACKING_PROFILE_ADAPTIVE);
   }
 
   @Override
